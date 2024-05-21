@@ -3,7 +3,7 @@
  */
 @Component
 export struct FindPage {
-  @State message: string = 'Find Page'
+  @State message: string = 'FindPage'
 
   build() {
     Row() {

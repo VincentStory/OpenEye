@@ -2,10 +2,11 @@ import { TabItem } from '../model/TabItem'
 import { CommonConstants } from '../constants/CommonConstants'
 // import { LogUtils } from '../utils/LogUtils'
 import MainViewModel from '../viewmodel/MainViewModel'
-// import { FindPage } from './find/FindPage'
-// import { HomePage } from './home/HomePage'
-// import { HotPage } from './hot/HotPage'
-// import { MinePage } from './mine/MinePage'
+import { FindPage } from './FindPage'
+import { HomePage } from './HomePage'
+import { HotPage } from './HotPage'
+import { MinePage } from './MinePage'
+// import { TestPage } from './FindPage'
 // import { LoadingDialog } from '../views/LoadingDialog'
 import emitter from '@ohos.events.emitter'
 import { EventKeys, loadingEvent } from '../event/EventKeys'
@@ -52,22 +53,22 @@ struct MainPage {
         barPosition: BarPosition.End,
       }) {
         TabContent() {
-          // HomePage()
+          HomePage()
         }
         .tabBar(this.TabBottom(MainViewModel.tabTitle[0], 0))
 
         TabContent() {
-          // FindPage()
+          FindPage()
         }
         .tabBar(this.TabBottom(MainViewModel.tabTitle[1], 1))
 
         TabContent() {
-          // HotPage()
+          HotPage()
         }
         .tabBar(this.TabBottom(MainViewModel.tabTitle[2], 2))
 
         TabContent() {
-          // MinePage()
+          MinePage()
         }
         .tabBar(this.TabBottom(MainViewModel.tabTitle[3], 3))
       }

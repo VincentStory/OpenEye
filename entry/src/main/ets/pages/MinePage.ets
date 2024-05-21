@@ -1,9 +1,6 @@
-/**
- * 首页
- */
 @Component
-export struct HomePage {
-  @State message: string = 'HomePage'
+export struct MinePage {
+  @State message: string = 'MinePage'
 
   build() {
     Row() {
@@ -16,6 +13,4 @@ export struct HomePage {
     }
     .height('100%')
   }
-
-
 }

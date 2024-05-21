@@ -14,4 +14,19 @@ struct Index {
     }
     .height('100%')
   }
+
+  aboutToAppear(){}
+
+  onPageShow(){
+
+  }
+  onPageHide(){
+
+  }
+
+  aboutToDisappear(){
+
+  }
+
+
 }

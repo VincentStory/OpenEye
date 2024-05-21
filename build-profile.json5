@@ -1,6 +1,20 @@
 {
   "app": {
-    "signingConfigs": [],
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "C:\\Users\\zhanzhao\\.ohos\\config\\auto_debug_OpenEye_com.vincent.openeye_30086000603402627.cer",
+          "storePassword": "0000001B5004F33159A225CAD8BBB044A85E96C85CDDFD65C300B48DA351C72A1B9D0D6C737354B6E781B1",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001B1026EEC1ED7E175570A54BC3D1C785B4E740A74E13ABAD821692850C3CA38596E61B2F4A30ED37",
+          "profile": "C:\\Users\\zhanzhao\\.ohos\\config\\auto_debug_OpenEye_com.vincent.openeye_30086000603402627.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:\\Users\\zhanzhao\\.ohos\\config\\auto_debug_OpenEye_com.vincent.openeye_30086000603402627.p12"
+        }
+      }
+    ],
     "compileSdkVersion": 9,
     "compatibleSdkVersion": 9,
     "products": [

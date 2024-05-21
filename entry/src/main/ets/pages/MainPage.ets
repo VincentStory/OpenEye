@@ -1,14 +1,15 @@
 import { TabItem } from '../model/TabItem'
 import { CommonConstants } from '../constants/CommonConstants'
-import { LogUtils } from '../utils/LogUtils'
+// import { LogUtils } from '../utils/LogUtils'
 import MainViewModel from '../viewmodel/MainViewModel'
-import { FindPage } from './FindPage'
-import { HomePage } from './HomePage'
+// import { FindPage } from './find/FindPage'
+// import { HomePage } from './home/HomePage'
 // import { HotPage } from './hot/HotPage'
 // import { MinePage } from './mine/MinePage'
 // import { LoadingDialog } from '../views/LoadingDialog'
-// import emitter from '@ohos.events.emitter'
-// import { EventKeys, loadingEvent } from '../event/EventKeys'
+import emitter from '@ohos.events.emitter'
+import { EventKeys, loadingEvent } from '../event/EventKeys'
+
 @Entry
 @Component
 struct MainPage {
@@ -16,10 +17,6 @@ struct MainPage {
   @Provide homeTabSelected: number = 0
   @State loadingTips: string = "加载中..."
   @State loadingShow: boolean = false
-
-  @State message: string = 'Hello World'
-
-
   //全局的loading
   // loadingDialogController: CustomDialogController = new CustomDialogController({
   //   builder: LoadingDialog({ loadingTips: this.loadingTips }),
@@ -45,7 +42,7 @@ struct MainPage {
 
   aboutToDisappear() {
     // this.loadingDialogController = null
-    // emitter.off(EventKeys.LOADING_DIALOG_EVENT)
+    emitter.off(EventKeys.LOADING_DIALOG_EVENT)
   }
 
   build() {
@@ -55,12 +52,12 @@ struct MainPage {
         barPosition: BarPosition.End,
       }) {
         TabContent() {
-          HomePage()
+          // HomePage()
         }
         .tabBar(this.TabBottom(MainViewModel.tabTitle[0], 0))
 
         TabContent() {
-          FindPage()
+          // FindPage()
         }
         .tabBar(this.TabBottom(MainViewModel.tabTitle[1], 1))
 
@@ -86,11 +83,11 @@ struct MainPage {
   }
 
   onPageShow() {
-    LogUtils.error("页面可见>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+    // LogUtils.error("页面可见>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
   }
 
   onPageHide() {
-    LogUtils.error("页面不可见>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+    // LogUtils.error("页面不可见>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
   }
 
   @Builder TabBottom(item: TabItem, index: number) {
@@ -114,7 +111,7 @@ struct MainPage {
         })
     }
     .justifyContent(FlexAlign.Center)
-    .height('100%')
+    .height(CommonConstants.FULL_HEIGHT_PERCENT)
     .width(CommonConstants.FULL_WIDTH_PERCENT)
     .backgroundColor($r("app.color.color_f5f5f5"))
   }
